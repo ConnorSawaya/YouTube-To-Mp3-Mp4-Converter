@@ -11,3 +11,16 @@ then click convert. for videos under a min its bascially instant if its over it 
 
 
 
+
+
+## Install & Run (one command)
+``bash
+pip install -r requirements.txt
+streamlit run main.py
+``n## Test
+``bash
+python -m py_compile main.py
+``n## Env
+No API key, no env vars (see .env.example). Needs internet for real converts; offline shows a friendly error.
+## Deploy (Railway)
+Procfile present: streamlit run main.py --server.port $PORT --server.address 0.0.0.0.

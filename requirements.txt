@@ -1,2 +1,2 @@
-streamlit
-pytubefix
+streamlit==1.42.0
+pytubefix>=6.0,<10

@@ -51,6 +51,6 @@ if st.button("Convert & Prepare To Download"):
                     
             
         except Exception as e:
-            st.error(f"Something Went Wrong{e}")
+            st.error(f"Something went wrong: {e}")
 st.divider()
 st.caption("Made By Connor S | https://github.com/ConnorSawaya/YouTube-To-Mp3-Mp4-Converter")

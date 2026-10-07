@@ -1,26 +1,45 @@
-# YouTube-To-Mp3-Mp4-Converter
-YouTube To Mp3/Mp4 Converter Uses streamlit and railway for hosting! No Api Key Free quick and easy
-https://youtube-to-mp3-mp4-converter-production.up.railway.app/ To test this out!
+# YouTube MP3 / MP4 Converter
 
-Simply made in python, go to https://youtube-to-mp3-mp4-converter-production.up.railway.app/ and add your youtube link and chose mp3 or mp4 download file type
+A small Streamlit app for turning a YouTube link into a downloadable audio or video file.
 
-then click convert. for videos under a min its bascially instant if its over it may take a few seconds... 
+Paste a YouTube URL, choose audio or video, let the app prepare the file, and download it directly from the Streamlit interface.
 
-<img width="1919" height="934" alt="image" src="https://github.com/user-attachments/assets/98f38114-ca6d-4640-95ac-9c5ad95c822c" />
+![Converter interface](https://github.com/user-attachments/assets/98f38114-ca6d-4640-95ac-9c5ad95c822c)
 
+## Features
 
+- Simple browser-based Streamlit interface.
+- Audio-only and video download options.
+- Shows the video's title and thumbnail before download.
+- Uses `pytubefix` instead of requiring a YouTube API key.
+- Removes the temporary server-side download after it is loaded for the user.
 
+## Run locally
 
-
-
-## Install & Run (one command)
-``bash
-pip install -r requirements.txt
+```bash
+git clone https://github.com/ConnorSawaya/YouTube-To-Mp3-Mp4-Converter.git
+cd YouTube-To-Mp3-Mp4-Converter
+python -m pip install -r requirements.txt
 streamlit run main.py
-``n## Test
-``bash
-python -m py_compile main.py
-``n## Env
-No API key, no env vars (see .env.example). Needs internet for real converts; offline shows a friendly error.
-## Deploy (Railway)
-Procfile present: streamlit run main.py --server.port $PORT --server.address 0.0.0.0.
+```
+
+No API key is required.
+
+## Project structure
+
+```text
+main.py            Streamlit application
+requirements.txt   Python dependencies
+Procfile           Railway start command
+.env.example       Example environment file
+```
+
+## Deployment
+
+The included `Procfile` is set up for a Streamlit deployment on Railway.
+
+The app needs outbound internet access so `pytubefix` can retrieve the requested media.
+
+## Notes
+
+YouTube can change its delivery behavior over time, so downloader libraries may occasionally need to be updated. Only download media you are allowed to save and use.
